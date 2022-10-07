@@ -3,7 +3,7 @@ package com.veeva.position;
 import lombok.Getter;
 
 /**
- * This enum represents four cardinal direction.
+ * This enum represents four cardinal directions.
  */
 @Getter
 public enum Direction {

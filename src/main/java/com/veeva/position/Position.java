@@ -5,8 +5,8 @@ import lombok.Getter;
 import java.util.Objects;
 
 /**
- * This class represents position of an object in a 2 dimensional space.
- * Uses x and y co-ordinate system for location and Direction for orientation.
+ * This class represents position of an object in a 2 Dimensional space.
+ * Uses x and y co-ordinate system for Location and Direction for Orientation.
  */
 @Getter
 public class Position {

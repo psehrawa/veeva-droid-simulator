@@ -33,6 +33,7 @@ public class PositionTest {
         for(Map.Entry<Position, Position> validRightPosition: VALID_RIGHT_POSITIONS.entrySet()) {
             // When
             Position rightPosition = validRightPosition.getKey().toRight();
+
             // Then
             assert rightPosition.equals(validRightPosition.getValue());
         }
@@ -45,6 +46,7 @@ public class PositionTest {
         for(Map.Entry<Position, Position> validRightPosition: VALID_RIGHT_POSITIONS.entrySet()) {
             // When
             Position leftPosition = validRightPosition.getValue().toLeft();
+
             // Then
             assert leftPosition.equals(validRightPosition.getKey());
         }
@@ -57,6 +59,7 @@ public class PositionTest {
         for(Map.Entry<Position, Position> validMovePosition: VALID_MOVE_POSITIONS.entrySet()) {
             // When
             Position movePosition = validMovePosition.getKey().move();
+
             // Then
             assert movePosition.equals(validMovePosition.getValue());
         }
@@ -66,8 +69,10 @@ public class PositionTest {
     public void toStringFormat() {
         // Given
         Position position = new Position(1,1,Direction.NORTH);
+
         // When
         String toStringResponse = position.toString();
+
         // Then
         assert toStringResponse.equals("1 1 N");
     }

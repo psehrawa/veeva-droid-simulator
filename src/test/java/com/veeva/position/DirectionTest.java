@@ -40,14 +40,13 @@ public class DirectionTest {
 
     @Test
     public void invalidParseDirection_throwIllegalArgumentException() {
-        /**
-         * Given: invalid direction character
-         * Then: throw IllegalArgumentException
-         * When: Direction.parseDirection is invoked
-         */
-
+        // Given
         String directionSign = "X";
+
+        // When
         Throwable exception = assertThrows(IllegalArgumentException.class, () -> Direction.parseDirection(directionSign));
+
+        // Then
         assert exception instanceof IllegalArgumentException;
         assert exception.getMessage().equals("Illegal direction sign " + directionSign);
     }

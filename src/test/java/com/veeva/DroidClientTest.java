@@ -17,29 +17,33 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class DroidClientTest {
 
     @Test
-    public void parsePlateau() {
+    public void canParsePlateau() {
         // Given
         String data = "3 3";
         Plateau dataPlateau = new RectangularPlateau(3,3);
+
         // When
         Plateau parsedPlateau = DroidClient.parsePlateau(data);
+
         // Then
         assert dataPlateau.equals(parsedPlateau);
     }
 
     @Test
-    public void parsePosition() {
+    public void canParsePosition() {
         // Given
         String data = "1 1 N";
         Position dataPosition = new Position(1,1, Direction.NORTH);
+
         // When
         Position parsedPosition = DroidClient.parsePosition(data);
+
         // Then
         assert dataPosition.equals(parsedPosition);
     }
 
     @Test
-    public void parseInstruction() {
+    public void canParseInstruction() {
         // Given
         String data = "LMR";
 
@@ -86,8 +90,10 @@ public class DroidClientTest {
     public void invalidString_throwIllegalArgumentException() {
         // Given
         String nullString = null;
+
         // When
         Exception exception = assertThrows(IllegalArgumentException.class, () -> DroidClient.isValidString(null));
+
         // Then
         assert exception instanceof IllegalArgumentException;
     }
@@ -96,8 +102,10 @@ public class DroidClientTest {
     public void validString_isValidString_throwIllegalArgumentException() {
         // Given
         String validString = "Hello";
+
         // When
         boolean stringValidity = DroidClient.isValidString("Hello");
+
         // Then
         assert stringValidity;
     }

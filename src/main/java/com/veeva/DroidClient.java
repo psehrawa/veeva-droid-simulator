@@ -16,7 +16,17 @@ import java.util.Scanner;
 public class DroidClient {
 
     /**
-     * Methods parses the plateau data
+     * Entry point of the application.
+     */
+    public static void main(String[] args) {
+        List<Droid> droids = readAndExecuteCommands(System.in);
+        for(Droid droid : droids) {
+            System.out.println(droid.getPosition());
+        }
+    }
+
+    /**
+     * Method parses the plateau data
      * and create and returns a RectangularPlateau object.
      */
     public static Plateau parsePlateau(String plateauData) {
@@ -70,16 +80,10 @@ public class DroidClient {
             Droid probeDroid = new ProbeDroid(droidPosition, plateau);
             probeDroid.navigate(droidInstructions);
             droids.add(probeDroid);
+            System.out.println(probeDroid.getPosition());
         }
 
         return droids;
-    }
-
-    public static void main(String[] args) {
-        List<Droid> droids = readAndExecuteCommands(System.in);
-        for(Droid droid : droids) {
-            System.out.println(droid.getPosition());
-        }
     }
 
     /**
